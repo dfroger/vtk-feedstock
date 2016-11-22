@@ -9,9 +9,13 @@ source:
   url: http://www.vtk.org/files/release/{{ minor_version }}/VTK-{{ version }}.tar.gz
   fn:  VTK-{{ version }}.tar.gz
   sha256: 78a990a15ead79cdc752e86b83cfab7dbf5b7ef51ba409db02570dbdd9ec32c3
+  patches:
+    # In order to fix: https://github.com/conda-forge/vtk-feedstock/issues/13
+    # Generated from VTK Git repo with: `git format-pach -1 786281d`
+    - 0001-Add-NULL-checks-to-LIC2D-setters.patch
 
 build:
-  number: 2
+  number: 3
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
