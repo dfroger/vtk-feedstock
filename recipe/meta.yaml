@@ -2,13 +2,12 @@
 {% set minor_version = ".".join(version.split(".")[:2]) %}
 
 package:
-  name: vtk
+  name: vtk_blesbok
   version: {{ version }}
 
 source:
-  url: http://www.vtk.org/files/release/{{ minor_version }}/VTK-{{ version }}.tar.gz
-  fn:  VTK-{{ version }}.tar.gz
-  sha256: 5f3ea001204d4f714be972a810a62c0f2277fbb9d8d2f8df39562988ca37497a
+  git_url: https://gitlab.kitware.com/dfroger/vtk.git
+  git_rev: PainterCommunicator
 
 build:
   number: 0
